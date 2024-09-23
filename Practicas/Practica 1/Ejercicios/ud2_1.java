@@ -7,14 +7,27 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-
+/**
+ * Clase ud2_1.
+ */
 public class ud2_1 {
 	
+	/**
+	 * Crear un directorio en la ruta especificada con el nombre especificado.
+	 *
+	 * @param ruta La ruta donde crear el directorio
+	 * @param nombre El nombre del directorio
+	 */
 	public static void crearDirectorio(String ruta,String nombre) {
 		File directorio=new File(ruta+File.separator+nombre);
 		directorio.mkdir();
 	}
 	
+	/**
+	 * Listar directorios y archivos de una determinada ruta.
+	 *
+	 * @param ruta La ruta de los directorios y archivos a listar
+	 */
 	public static void listarDirectorio(String ruta) {
 		File directorio=new File(ruta);
 		File[] contenido = directorio.listFiles();
@@ -27,6 +40,12 @@ public class ud2_1 {
 		}
 	}
 	
+	/**
+	 * Copiar archivo de una ruta a otra.
+	 *
+	 * @param origen La ruta origen
+	 * @param destino La ruta destino
+	 */
 	public static void copiarArchivo(String origen,String destino) {
 		Path pathOrigen = Paths.get(origen);
         Path pathDestino = Paths.get(destino);
@@ -38,11 +57,22 @@ public class ud2_1 {
 		}
 	}
 	
+	/**
+	 * Mover archivo de una ruta a otra.
+	 *
+	 * @param origen La ruta origen
+	 * @param destino La ruta destino
+	 */
 	public static void moverArchivo(String origen,String destino) {
 		copiarArchivo(origen, destino);
 		borrarArchivo(origen);
 	}
 	
+	/**
+	 * Borrar archivo especificado.
+	 *
+	 * @param ruta La ruta del archivo a borrar
+	 */
 	public static void borrarArchivo(String ruta) {
 		File f=new File(ruta);
 		if(f.isFile()||f.isDirectory()&&f.listFiles().length==0) {
@@ -53,6 +83,11 @@ public class ud2_1 {
 		}
 	}
 	
+	/**
+	 * Menu para mostrar las 4 opciones del programa.
+	 *
+	 * @param numeroElegido La opcion elegida
+	 */
 	public static void menu(int numeroElegido) {
 		Scanner input=new Scanner(System.in);
 		switch (numeroElegido) {
@@ -93,6 +128,11 @@ public class ud2_1 {
 		}
 	}
 	
+	/**
+	 * Metodo main que ejecuta el programa.
+	 *
+	 * @param args Los argumetnos que recibe por consola, ninguno;
+	 */
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
 		int numeroElegido=0;
