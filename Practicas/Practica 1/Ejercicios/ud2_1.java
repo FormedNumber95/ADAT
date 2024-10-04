@@ -13,9 +13,9 @@ import java.util.Scanner;
 public class ud2_1 {
 	
 	/**
-	 * Crear un directorio en la ruta especificada con el nombre especificado.
+	 * Crear directorio.
 	 *
-	 * @param ruta La ruta donde crear el directorio
+	 * @param ruta La ruta donde se va a crear el directorio
 	 * @param nombre El nombre del directorio
 	 */
 	public static void crearDirectorio(String ruta,String nombre) {
@@ -24,18 +24,18 @@ public class ud2_1 {
 	}
 	
 	/**
-	 * Listar directorios y archivos de una determinada ruta.
+	 * Lista los archivos y directorios de la ruta.
 	 *
-	 * @param ruta La ruta de los directorios y archivos a listar
+	 * @param ruta La ruta a listar
 	 */
 	public static void listarDirectorio(String ruta) {
 		File directorio=new File(ruta);
 		File[] contenido = directorio.listFiles();
 		for(File archivo:contenido) {
 			if (archivo.isDirectory()) {
-                System.out.println("Directorio " + archivo.getName());
+                System.out.println("Directorio "+archivo.getName());
             } else if (archivo.isFile()) {
-                System.out.println("Archivo " + archivo.getName());
+                System.out.println("Archivo "+archivo.getName());
             }
 		}
 	}
@@ -69,7 +69,7 @@ public class ud2_1 {
 	}
 	
 	/**
-	 * Borrar archivo especificado.
+	 * Borrar archivo de una ruta concreta.
 	 *
 	 * @param ruta La ruta del archivo a borrar
 	 */
@@ -84,7 +84,7 @@ public class ud2_1 {
 	}
 	
 	/**
-	 * Menu para mostrar las 4 opciones del programa.
+	 * Menu de las opciones.
 	 *
 	 * @param numeroElegido La opcion elegida
 	 */
@@ -131,7 +131,8 @@ public class ud2_1 {
 	/**
 	 * Metodo main que ejecuta el programa.
 	 *
-	 * @param args Los argumetnos que recibe por consola, ninguno;
+	 * @param args Los argumentos que se escriben desde la linea de comandos, 
+	 * nada
 	 */
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
